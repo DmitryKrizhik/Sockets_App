@@ -1,0 +1,4 @@
+Linux is an open-source operating system that is widely used in servers, supercomputers, and mobile devices. 
+It was first released in 1991 by Linus Torvalds and has since grown into a powerful and flexible platform. 
+Linux is known for its stability, security, and customization options, making it a popular choice for developers and tech enthusiasts. 
+With its vast library of software and tools, Linux offers endless possibilities for those looking to create and innovate.
