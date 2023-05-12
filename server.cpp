@@ -33,6 +33,20 @@ int main() {
         return 1;
     }
 
+    if (setsid() < 0) {
+        std::cerr << "Failed to create new session" << std::endl;
+        return 1;
+    }
+
+    if (chdir("/") < 0) {
+        std::cerr << "Failed to change directory" << std::endl;
+        return 1;
+    }
+
+    close(STDIN_FILENO);
+    close(STDOUT_FILENO);
+    close(STDERR_FILENO);
+
     signal(SIGTERM, sig_handler);
     signal(SIGHUP, sig_handler);
 
@@ -76,3 +90,5 @@ int main() {
 
     return 0;
 }
+
+
