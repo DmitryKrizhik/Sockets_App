@@ -14,7 +14,7 @@ void sig_handler(int sig) {
 }
 
 int main() {
-   
+
     int server_fd, new_socket;
     struct sockaddr_in address;
     int addrlen = sizeof(address);
@@ -42,7 +42,7 @@ int main() {
         return 1;
     }
 
-    if (chdir("/") < 0) {
+    if (chdir("data") < 0) {
         std::cerr << "Failed to change directory" << std::endl;
         return 1;
     }
@@ -69,7 +69,7 @@ int main() {
         time_t now = time(NULL);
         strftime(filename, sizeof(filename), "%Y-%m-%d_%H-%M-%S.txt", localtime(&now));
 
-        std::ofstream file("/home/krizhik/Desktop/RR/Sockets_App/" + std::string(filename), std::ios::binary);
+        std::ofstream file(std::string(filename), std::ios::binary);
 
         if (!file.is_open()) {
             std::cerr << "Failed to create file" << std::endl;
